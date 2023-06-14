@@ -73,6 +73,8 @@ title(["Magnitude do filtro LP normalizado aproximação de Chebyshev (N=" num2s
 hold on
 desenha_gabpb(Amax, Amin, wp, ws, w);
 
+print -dpng 'magnitude-filtro-lp-b-c-normalizado'
+
 %  end - LETRA B e C
 
 %  begin - LETRA D
@@ -105,6 +107,8 @@ ylabel("Fase (\\deg)");
 title(["Fase de T(s) para filtros normalizados: Nb=" num2str(Nb) ", Nc= " num2str(Nc)])
 legend('Butterworth', 'Chebyshev');
 
+print -dpng 'magnitude-fase-lp-normalizados'
+
 %  end - LETRA F
 
 %  begin - LETRA E
@@ -127,6 +131,8 @@ title('Polos e Zeros - Filtro Chebyshev normalizado');
 xlabel("\\sigma - Eixo Real");
 ylabel("j\\omega - Eixo Imaginário");
 legend("Pólos");
+
+print -dpng 'polos-butter-cheb-normalizado'
 
 %  end - LETRA E
 
@@ -161,6 +167,8 @@ title(["Magnitude do filtro PF aproximação de Chebyshev (N=" num2str(Nc) ")"])
 hold on
 desenha_gabpf(Amax, Amin, w1 / (2 * pi), w2 / (2 * pi), w3 / (2 * pi), w4 / (2 * pi), wd ./ (2 * pi));
 
+print -dpng 'magnitude-pf-b-c-desnormalizado'
+
 %  end - LETRA H
 
 %  begin - LETRA I
@@ -183,6 +191,8 @@ grid on;
 xlabel("\\omega [rad/s]");
 ylabel("Fase (\\deg)");
 title(["Fase de T(s) Chebyshev desnormalizado"])
+
+print -dpng 'fase-butter-cheb-desnormalizado-banda-passante'
 
 % ! somente banda passante
 
@@ -209,6 +219,8 @@ grid;
 title('Resposta ao Impulso do Filtro Chebyshev desnormalizado');
 xlabel('Time [s]');
 ylabel('Amplitude');
+
+print -dpng 'resposta-impulso-butter-cheb-desnormalizado'
 
 %  end - LETRA J
 
@@ -284,6 +296,8 @@ title("Amplitude espectral do sinal y(t) apos o filtro PF Chebyshev");
 xlabel("\\omega [rad/s]");
 ylabel("|Y(\\omega)|");
 
+print -dpng 'espectro-input-filtro-butter-cheb'
+
 % Sinais de entrada (x(t)) e saida (y(t)) apos o processo de filtragem
 % Aproximacao de Butterworth
 figure
@@ -307,6 +321,8 @@ plot(Ws * t(100:300), x(100:300))
 xlabel("tempo [s]");
 ylabel("x (t)");
 title("Sinal x(t)=sen(0.5\\omega_0t)+sen(\\omega_0t)+sen(3\\omega_0t)");
+
+print -dpng 'input'
 
 % Sinais de entrada (x(t)) e saida (y(t)) apos o processo de filtragem
 % Aproximacoes de Butterworth e Chebyshev
