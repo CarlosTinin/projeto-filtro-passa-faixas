@@ -6,15 +6,16 @@ Amin = 35; % dB
 
 %  begin - LETRA A
 w0 = 2*pi*225; % Frequência central em rad
+
 B = 2*pi*270; % Largura de banda em rad
 
-w1_eq = [1, B, power(w0, 2)]; % Polinômio que define os valores para w1, já em rad;
-w1_roots = abs(roots(w1_eq)); % Calcular as raízes do polinômio
-w1 = w1_roots(1); % Selecionar raiz positiva
+w1_eq = [1 B -power(w0, 2)]; % Polinômio que define os valores para w1, já em rad;
+w1_roots = roots(w1_eq); % Calcular as raízes do polinômio
+w1 = w1_roots(2); % Selecionar raiz positiva
 
 w2 = B + w1;
 
-w3 = 2*pi*9;
+w3 = 2*pi*45;
 
 w4 = power(w0, 2)/w3;
 
