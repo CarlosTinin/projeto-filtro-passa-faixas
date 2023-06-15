@@ -5,7 +5,7 @@ Amax = 3.01;
 Amin = 35; % dB
 
 %  begin - LETRA A
-w0 = 2 * pi * 225; % Frequência central em rad
+w0 = 2 * pi * 180; % Frequência central em rad
 
 B = 2 * pi * 270; % Largura de banda em rad
 
@@ -15,7 +15,7 @@ w1 = w1_roots(2); % Selecionar raiz positiva
 
 w2 = B + w1;
 
-w3 = 2 * pi * 9;
+w3 = 2 * pi * 32;
 
 w4 = power(w0, 2) / w3;
 
@@ -234,9 +234,9 @@ Ts = (2 * pi) / Ws; % periodo de amostragem
 L = 2048; % numero de amostras
 t = (0:L - 1) * Ts; % vetor de tempo
 
-sin1 = sin(2 * pi * 9 * t);
+sin1 = sin(2 * pi * 32 * t);
 sin2 = sin(w0 * t);
-sin3 = sin(2 * pi * 1000 * t);
+sin3 = sin(2 * pi * 720 * t);
 x = sin1 + sin2 + sin3; % sinal composto de 3 senoides
 
 % Obtem a transformada de Fourier do sinal
